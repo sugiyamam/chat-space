@@ -11,16 +11,15 @@
 - has_many :group, thruogh:  :has_many :user_group
 
 
-## groupテーブル
+## groupsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|group|string|null: false|
-|addition|string|||
-|username|string|null: false|
+|groupname|string|null: false|
+|chatmember|string|||
 ### Association
-- has_many :user, through:  :has_many :user_group
+- has_many :users, through:  :has_many :users_group
 
-## messageテーブル
+## messagesテーブル
 |Column|Type|Options|
 |------|----|-------|
 |text|text|null: false|
