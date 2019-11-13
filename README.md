@@ -7,19 +7,18 @@
 |password|string|null: false|
 |username|string|null: false|
 ### Association
-- has_many :masseges
-- has many :groups
+- has_many :messages
+- has_many :group, thruogh:  :has_many :user_group
 
 
-## gruopテーブル
+## groupテーブル
 |Column|Type|Options|
 |------|----|-------|
 |group|string|null: false|
 |addition|string|null: false|
 |username|string|null: false|
 ### Association
-- has_many :groups
-- has_many :addition
+- has_many :user, through:  :has_many :user_group
 
 ## messageテーブル
 |Column|Type|Options|
