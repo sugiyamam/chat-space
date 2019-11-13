@@ -19,6 +19,7 @@
 |------|----|-------|
 |groupname|string|null: false|
 ### Association
+- has_many :users, through: :users_groups
 
 ## messagesテーブル
 |Column|Type|Options|
