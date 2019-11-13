@@ -15,7 +15,7 @@
 |Column|Type|Options|
 |------|----|-------|
 |group|string|null: false|
-|addition|string|null: false|
+|addition|string|||
 |username|string|null: false|
 ### Association
 - has_many :user, through:  :has_many :user_group
