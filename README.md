@@ -1,13 +1,17 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> f44954dc918ba6788a3c51db92e07b2a960b613f
 # ChatSpace DB設計
 
 ## usersテーブル
 |Column|Type|Options|
 |------|----|-------|
 |username|string|null: false|
+
 ### Association
 - has_many :messages
-- has_many :group, thruogh:  :has_many :user_group
+- has_many :groups, thruogh: :users_groups
 
 
 ## groupsテーブル
@@ -15,7 +19,6 @@
 |------|----|-------|
 |groupname|string|null: false|
 ### Association
-- has_many :users, through:  :has_many :users_group
 
 ## messagesテーブル
 |Column|Type|Options|
@@ -23,8 +26,8 @@
 |text|text|null: false|
 |image|text|||
 ### Association
-- belongs_to :users
-- belongs_to :groups
+- belongs_to :user
+- belongs_to :group
 
 ## users_groupテーブル
 |Column|Type|Options|
@@ -32,8 +35,12 @@
 |user_id|integer|null: false, foreign_key: true|
 |group_id|integer|null: false, foreign_key: true|
 ### Association
-- belongs_to :users
-- belongs_to :groups
+- belongs_to :user
+- belongs_to :group
+
+
+
+
 =======
 # README
 
@@ -59,4 +66,3 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
->>>>>>> parent of 56d38f7... generated files by scaffold
