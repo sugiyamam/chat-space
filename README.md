@@ -25,7 +25,7 @@
 |text|text|null: false|
 |image|text|||
 ### Association
-- belongs_to :username
+- belongs_to :users
 
 ## users_groupテーブル
 |Column|Type|Options|
