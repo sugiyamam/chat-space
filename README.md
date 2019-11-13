@@ -1,40 +1,39 @@
 # ChatSpace DB設計
 
-## userテーブル
+## usersテーブル
 |Column|Type|Options|
 |------|----|-------|
 |email|string|null: false|
 |password|string|null: false|
 |username|string|null: false|
 ### Association
-- has_many :groups, through: :user_groups
 - has_many :masseges
-- has_many :user_groups
+- has many :groups
+
 
 ## gruopテーブル
 |Column|Type|Options|
 |------|----|-------|
+|group|string|null: false|
+|addition|string|null: false|
 |username|string|null: false|
-|user_id|integer|null: false, foreign_key: true|
 ### Association
-- belongs_to :user
-- has_many :messages
-- has_many :posts_tags
-- has_many  :tags,  through:  :posts_tags
+- has_many :groups
+- has_many :addition
 
 ## messageテーブル
 |Column|Type|Options|
 |------|----|-------|
 |text|text|null: false|
+|image|text||
 ### Association
-- has_many :posts_tags
-- has_many  :posts,  through:  :posts_tags
+- belongs_to :username
 
-## user_groupテーブル
+## users_groupテーブル
 |Column|Type|Options|
 |------|----|-------|
-|post_id|integer|null: false, foreign_key: true|
-|tag_id|integer|null: false, foreign_key: true|
+|user_id|integer|null: false, foreign_key: true|
+|group_id|integer|null: false, foreign_key: true|
 ### Association
-- belongs_to :post
-- belongs_to :tag
+- has_many :users
+- has_many :groups
