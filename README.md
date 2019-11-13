@@ -25,7 +25,7 @@
 |Column|Type|Options|
 |------|----|-------|
 |text|text|null: false|
-|image|text|||
+|image|text|||
 ### Association
 - belongs_to :username
 
