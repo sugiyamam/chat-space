@@ -4,22 +4,25 @@
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null: false|
-
 ### Association
 - has_many :messages
-- has_many :groups, thruogh: :users_group
-
+- has_many :groups, thruogh: :users_groups
+- has_many :users_group
 
 ## groupsテーブル
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null: false|
 ### Association
-- has_many :users, through: :users_group
+- has_many :users, through: :users_groups
+- has_many :users_group
+- has_many :messages
 
 ## messagesテーブル
 |Column|Type|Options|
 |------|----|-------|
+|user_id|integer|null: false, foreign_key: true|
+|group_id|integer|null: false, foreign_key: true|
 |text|text||
 |image|text||
 ### Association
