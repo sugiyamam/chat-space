@@ -3,25 +3,25 @@
 ## usersテーブル
 |Column|Type|Options|
 |------|----|-------|
-|username|string|null: false|
+|name|string|null: false|
 
 ### Association
 - has_many :messages
-- has_many :groups, thruogh: :users_groups
+- has_many :groups, thruogh: :users_group
 
 
 ## groupsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|groupname|string|null: false|
+|name|string|null: false|
 ### Association
-- has_many :users, through: :users_groups
+- has_many :users, through: :users_group
 
 ## messagesテーブル
 |Column|Type|Options|
 |------|----|-------|
-|text|text|null: false|
-|image|text|||
+|text|text||
+|image|text||
 ### Association
 - belongs_to :user
 - belongs_to :group
