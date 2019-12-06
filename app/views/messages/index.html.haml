@@ -1,0 +1,17 @@
+!!!
+%html
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %title ChatSpace
+    %meta{:content => "authenticity_token", :name => "csrf-param"}/
+    %meta{:content => "5aVckaItdJRD8g7tIPOaJdjSz/gRgqUWROQLMH88OMa6p29RwkTascxiqyKuTelAfQXWJrRFXArjOebNxP431A==", :name => "csrf-token"}/
+    %link{"data-turbolinks-track" => "reload", :href => "/assets/application-20597f7122b97f433c4487edf7d6a0cfc9e951e2a661b8b0c7320b95bbd38ccd.css", :media => "all", :rel => "stylesheet"}/
+    %script{"data-turbolinks-track" => "reload", :src => "/assets/application-92a91cf5753a538c5407a46c726acab43576fb46358ffa8a7ee0ee0719aa2f51.js"}
+  
+  %body
+    .flash-box
+    
+    .wrapper
+    = render 'messages/side_bar'
+    = render 'messages/main_chat'
+    
