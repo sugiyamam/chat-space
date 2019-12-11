@@ -1,18 +1,18 @@
 .chat-main
   .main-header
     .main-header__left-box
-      %h2.main-header__left-box__current-group{"data-group_id" => "6133"} ms
+      %h2.main-header__left-box__current-group{"data-group_id": "6133"} ms
       %ul.main-header__left-box__member-list Member：まなぶり
-    %a{:href => "/groups/6133/edit"}
+    %link_to "/groups/6133/edit"
       .main-header__edit-btn Edit
 
   .messages
-    .message{"data-message_id" => "13459"}
+    .message{"data-message_id": "13459"}
       .message__upper-info
         %p.message__upper-info__talker まなぶり
         %p.message__upper-info__date 2019/11/19(Tue) 20:58:07
       %p.message__text test
-    .message{"data-message_id" => "13586"}
+    .message{"data-message_id": "13586"}
       .message__upper-info
         %p.message__upper-info__talker まなぶり
         %p.message__upper-info__date 2019/11/20(Wed) 15:20:34
@@ -20,11 +20,11 @@
 
   .form
     %form#new_message.new_message{"accept-charset" => "UTF-8", :action => "/groups/6133/messages", :enctype => "multipart/form-data", :method => "post"}
-      %input{:name => "utf8", :type => "hidden", :value => "✓"}/
-      %input{:name => "authenticity_token", :type => "hidden", :value => "mjnV5f9at285tHg6AQ37ZIvGqQy9AjtdinXwpduVvgWm8Qv1yLZ6ClUAJmwWItxzQv4UHuYm2naj1xobUzbBdg=="}/
+      %input{name: "utf8", type: "hidden", value: "✓"}/
+      %input{name: "authenticity_token", type: "hidden", value: "mjnV5f9at285tHg6AQ37ZIvGqQy9AjtdinXwpduVvgWm8Qv1yLZ6ClUAJmwWItxzQv4UHuYm2naj1xobUzbBdg=="}/
       .input-box
-        %input#message_content.input-box__text{:name => "message[content]", :placeholder => "type a message", :type => "text"}/
-        %label.input-box__image{:for => "message_image"}
+        %input#message_content.input-box__text{name: "message[content]", placeholder: "type a message", type: "text"}/
+        %label.input-box__image{for: "message_image"}
           %i.fa.fa-image 
-          %input#message_image.input-box__image__file{:name => "message[image]", :type => "file"}/
-      %input.submit-btn{"data-disable-with" => "Send", :name => "commit", :type => "submit", :value => "Send"}/
+          %input#message_image.input-box__image__file{name: "message[image]", type: "file"}/
+      %input.submit-btn{"data-disable-with": "Send", name: "commit", type: "submit", value: "Send"}/

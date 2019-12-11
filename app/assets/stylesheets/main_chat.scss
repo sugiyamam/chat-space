@@ -14,17 +14,17 @@
     overflow: scroll;
     &__left-box {
       margin-top: 35px;
-      h2.main-header__left-box__current-group {
+      &__current-group {
         font-size: 20px;
         color: #333;
         margin-bottom: 15px;
       }
-      ul.main-header__left-box__member-list {
+        &__member-list {
         display: flex;
         font-size: 12px;
         color: #999999;
         }
-      li.main-header__left-box__member-list__member {
+        &__member {
         margin: 0;
         padding: 0;
       }
@@ -54,18 +54,18 @@
       &__upper-info {
         display: flex;
         margin-bottom: 10px;
-        p.message__upper-info__talker {
+        &__talker {
           color: #434a54;
           font-size: 16px;
           font-weight: bold;
         }
-        p.message__upper-info__date {
+        &__date {
           color: #999999;
           font-size: 12px;
           margin-left: 10px;
         }
       }
-      p.message__text {
+      &__text {
           font-size: 14px;
           margin-bottom: 10px;
           color: #434a54;
@@ -90,11 +90,11 @@
           color: #434a54;
           border-style: none;
         }
-        .input-box__image {
+        &__image {
           position: absolute;
           top: 10px;
           right: 10px;
-          font-size: 1.3rem;
+          font-size: 22px;
           cursor: pointer;
           .fa.fa-image {
             display: inline-block;

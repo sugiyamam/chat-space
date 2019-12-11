@@ -13,13 +13,13 @@
       justify-content: space-between;
       width: 100%;
       font-weight: bold;
-      p.side-header__box__user-name {
+      &__user-name {
         margin: 0;
         padding: 0;
       }
-      ul.side-header__box__menu {
+      &__menu {
         display: flex;
-        li.side-header__box__menu__new-group {
+        &__new-group {
           margin-left: 0.3rem;
           a {
             color: white;
@@ -31,7 +31,7 @@
             }
           }
         }
-        li.side-header__box__menu__edit-user {
+        &__edit-user {
           margin-left: 0.3rem;
           a {
             color: white;
@@ -60,11 +60,11 @@
         margin: 0;
         padding: 0;
         color: white;
-        p.group__group-name {
+        &__group-name {
           font-size: 15px;
           margin-bottom: 5px;
         }
-        p.group__latest-message {
+        &__latest-message {
           font-size: 11px;
         }
       }
