@@ -43,52 +43,26 @@ $(function(){
  e.preventDefault();
  var formData = new FormData(this);
  var url = $(this).attr('action')
+
+var reloadMessages = function() {
+  var last_message_id = $('.message:last').data("message-id");
  $.ajax({
-   url: url,
-   type: "POST",
+   url: "api/messages",
+   type: 'get',
    data: formData,
    dataType: 'json',
-   processData: false,
-   contentType: false
+   data: {id: last_message_id}
  })
-  .done(function(data){
-    var html = buildHTML(data);
-    $('.message').append(html);
-    $('.messages').animate({ scrollTop: $('.messages')[0].scrollHeight});
-    $('.form__submit').prop('disabled', false);
-    $('form')[0].reset();
+  .done(function(message){
+    var insertHTML = '';
+    $.each(messages, function(i, message) {
+      insertHTML += buildHTML(message)
+    });
+    $('.messages').append(insertHTML);
   })
   .fail(function() {
     alert("メッセージ送信に失敗しました");
   });
   return false;
- });
-// ここまで非同期、以下自動更新部分
-  var reloadMessages = function() {
-    var last_message_id = $('.message:last').data("message-id");
-    $.ajax({
-      url: "api/messages",
-      type: 'get',
-      // data: formData,
-      dataType: 'json',
-      data: {id: last_message_id}
-    })
-    .done(function(messages){
-      if (messages.length !== 0) {
-      var insertHTML = '';
-      $.each(messages, function(i, message) {
-        insertHTML += buildHTML(message)
-      });
-      $('.messages').append(insertHTML);
-      $('.messages').animate({ scrollTop: $('.messages')[0].scrollHeight});
-      }
-    })
-    .fail(function() {
-        alert('error');
-    });
-  };
-  if (document.location.href.match(/\/groups\/\d+\/messages/)) {
-    setInterval(reloadMessages, 7000);
-  }
-});
-
+ };
+)};
