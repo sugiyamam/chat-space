@@ -69,7 +69,6 @@ $(function(){
     $.ajax({
       url: "api/messages",
       type: 'get',
-      // data: formData,
       dataType: 'json',
       data: {id: last_message_id}
     })
